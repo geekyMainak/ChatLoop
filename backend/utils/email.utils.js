@@ -4,10 +4,15 @@ export const sendOTP = async (email, otp) => {
     try {
         // Create a transporter using SMTP
         const transporter = nodemailer.createTransport({
-            service: 'gmail', // You can change this to your preferred email service
+            host: "smtp.gmail.com",
+            port: 587,
+            secure: false, // true only for 465
             auth: {
                 user: process.env.SMTP_USER,
                 pass: process.env.SMTP_PASS,
+            },
+            tls: {
+                rejectUnauthorized: false,
             },
         });
 
