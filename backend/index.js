@@ -12,7 +12,7 @@ import cors from "cors"
 const port=process.env.PORT || 5000
 
 app.use(cors({
-    origin:"http://localhost:5173", 
+    origin:"https://chatloop-rj55.onrender.com", 
     credentials: true
 }))
 app.use(express.json())
